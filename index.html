@@ -3,288 +3,573 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔒 Secure 1-on-1 Private Live Cam [Active Now] 🎥</title>
-    
-    <meta name="description" content="🔒 Live from my private room. 100% FREE access, NO credit cards needed. Click to join my 1-on-1 private webcam instantly right now! 🎥✨">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="🔒 Secure 1-on-1 Private Live Cam [Active Now] 🎥">
-    <meta property="og:description" content="🔒 Live from my private room. 100% FREE access, NO credit cards needed. Click to join my 1-on-1 private webcam instantly right now! 🎥✨">
-    <meta property="og:url" content="https://www.msn.com/">
-    <meta property="og:site_name" content="Secure Cam Server">
-    
-    <meta property="og:image" content="https://github.com/mizan000321-ops/newv/blob/main/HGShZ2GWUAEMERX.jpg?raw=true">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/jpeg">
-
+    <title>🔒 VIP Member Portal - Private Live Access</title>
     <style>
-        /* স্ক্রোলিং পুরোপুরি সচল রাখার জন্য ১০০% ক্লিন সিএসএস */
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
+        /* Premium Dark & Hot-Pink Theme */
+        :root {
+            --primary: #ff0055;
+            --primary-hover: #e6004c;
+            --secondary: #1e293b;
+            --dark: #090d16;
+            --glass: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.1);
         }
-        
-        html, body {
-            background-color: #f5f7fb;
-            color: #212529;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            width: 100%;
-            overflow-x: hidden;
-            overflow-y: auto; /* স্ক্রোলিং জোরপূর্বক অন রাখা হলো */
-            -webkit-overflow-scrolling: touch;
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            padding: 20px 10px 40px 10px;
-        }
-        
-        .container {
-            background: #ffffff;
-            max-width: 440px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 24px 20px;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            text-align: center;
-            border-top: 6px solid #ff0055;
-            display: block;
-            height: auto; /* হাইট অটো করা হলো যাতে কন্টেন্ট অনুযায়ী বাড়ে */
-        }
-        
-        .live-status {
-            display: inline-flex;
-            align-items: center;
-            background: #f0fdf4;
-            color: #16a34a;
-            padding: 5px 14px;
-            border-radius: 30px;
-            font-size: 11px;
-            font-weight: 800;
-            margin-bottom: 18px;
-            letter-spacing: 0.8px;
-            border: 1px solid #dcfce7;
-        }
-        .live-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #22c55e;
-            border-radius: 50%;
-            margin-right: 6px;
+            background-color: var(--dark);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            padding-bottom: 60px;
         }
 
-        h2 { color: #1e293b; font-size: 21px; font-weight: 700; margin-bottom: 15px; }
-        p { font-size: 14.5px; line-height: 1.6; color: #475569; text-align: left; margin-bottom: 16px; }
-        
-        /* ফেক ভিডিও প্লেয়ার লেআউট */
-        .video-container {
-            width: 100%;
-            margin: 15px 0 20px 0;
-            position: relative;
-            background: #000000;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            border: 2px solid #ff0055;
+        /* Top Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px 25px;
+            background: linear-gradient(to bottom, rgba(255, 0, 85, 0.2), transparent);
+            border-bottom: 1px solid rgba(255, 0, 85, 0.1);
         }
-        .video-banner-link {
-            display: block;
+
+        .profile-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+        }
+
+        .profile-img {
             width: 100%;
             height: 100%;
-            text-decoration: none;
-            position: relative;
-        }
-        .video-fallback-stream {
-            width: 100%;
-            height: 240px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
             object-fit: cover;
-            display: block;
-            opacity: 0.85;
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.6);
         }
-        .play-overlay-btn {
+
+        .online-badge {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255, 0, 85, 0.9);
-            width: 70px;
-            height: 70px;
+            bottom: 5px;
+            right: 5px;
+            background: #22c55e;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 2px solid var(--dark);
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .sub-text { color: #94a3b8; font-size: 14px; max-width: 400px; margin: 0 auto; line-height: 1.4; }
+
+        /* Real-time Interactive Inbox Box Section */
+        .inbox-wrapper {
+            max-width: 500px;
+            margin: 25px auto;
+            padding: 0 20px;
+        }
+
+        .inbox-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .inbox-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .inbox-p {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 8px;
+            background: rgba(0,0,0,0.3);
+            padding: 6px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .input-group input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-group input::placeholder { color: #64748b; }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover { background: var(--primary-hover); }
+
+        .status-msg {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.4;
+            display: none;
+            text-align: left;
+        }
+
+        /* Block-Level Link Buttons (High Contrast Design) */
+        .cta-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .main-link-btn {
+            display: block !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            background: linear-gradient(135deg, #ff0055 0%, #ff4d6d 100%) !important;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            padding: 18px 20px !important;
+            border-radius: 50px !important;
+            font-size: 16px !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.5px !important;
+            box-shadow: 0 8px 25px rgba(255, 0, 85, 0.4) !important;
+            transition: transform 0.2s, opacity 0.2s !important;
+            margin: 15px 0 !important;
+        }
+
+        .main-link-btn:hover {
+            transform: translateY(-1px);
+            opacity: 0.95;
+        }
+
+        /* Gallery Grid Layout */
+        .gallery-heading {
+            max-width: 1000px;
+            margin: 40px auto 15px;
+            padding: 0 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+        }
+
+        .gallery-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        .video-card {
+            background: var(--glass);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, border-color 0.3s;
+            color: white;
+            position: relative;
+            display: block;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: scale(1.04);
+            border-color: var(--primary);
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: #111827;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .thumb-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7; 
+        }
+
+        .play-btn {
+            position: absolute;
+            background: var(--primary);
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
+            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.5);
+            z-index: 2;
         }
-        .play-icon {
+
+        .play-triangle {
             width: 0;
             height: 0;
-            border-top: 14px solid transparent;
-            border-left: 24px solid #ffffff;
-            border-bottom: 14px solid transparent;
-            margin-left: 6px;
+            border-top: 9px solid transparent;
+            border-left: 15px solid white;
+            border-bottom: 9px solid transparent;
+            margin-left: 5px;
         }
-        .video-control-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+
+        .video-info {
+            padding: 10px;
+            font-size: 12px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.75);
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* VIP POPUP MODAL STYLES */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #111827;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            max-width: 450px;
             width: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 8px 12px;
-            display: flex;
-            justify-content: space-between;
-            color: #ffffff;
-            font-size: 11px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 0, 85, 0.3);
+            position: relative;
+            animation: popIn 0.3s ease-out forwards;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
             font-weight: bold;
         }
+        
+        .close-btn:hover { background: rgba(255,255,255,0.2); }
 
-        .card-alert {
-            background-color: #fff5f5;
-            border-left: 4px solid #ff4d6d;
-            padding: 14px;
-            margin: 18px 0;
-            border-radius: 12px;
-            text-align: left;
-        }
-        .card-status {
-            background-color: #f0f9ff; 
-            border-left: 4px solid #0284c7;
-            padding: 14px;
-            margin: 18px 0;
-            border-radius: 12px;
-            text-align: left;
-        }
-        .card-status ul { padding-left: 18px; color: #0369a1; font-size: 13.5px; }
-        .card-status li { margin-top: 5px; }
-
-        /* ৩ কলামের স্কয়ার গ্যালারি গ্রিড */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin: 20px 0;
-        }
-        .gallery-img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
+        .modal-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
         }
 
-        /* ৩টি ভিন্ন স্টাইলের বাটন */
-        .action-btn {
-            display: block;
-            color: #ffffff !important;
-            text-decoration: none !important;
-            font-weight: 700;
-            text-align: center;
-            box-sizing: border-box;
-            transition: transform 0.2s, opacity 0.2s;
-            cursor: pointer;
+        .modal-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
         }
-        .action-btn:hover {
-            transform: translateY(-1px);
-            opacity: 0.95;
+
+        .modal-desc {
+            font-size: 14.5px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
-        .btn-top {
-            font-size: 15px;
-            padding: 15px 20px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #ff0055, #ff4d6d);
-            box-shadow: 0 6px 18px rgba(255, 0, 85, 0.25);
-            margin: 15px 0 20px 0;
-        }
-        .btn-mid {
-            font-size: 15px;
-            padding: 14px 20px;
-            border-radius: 50px;
-            background: #0084ff;
-            box-shadow: 0 5px 15px rgba(0, 132, 255, 0.25);
-            margin: 20px 0;
-        }
-        .btn-bottom {
-            font-size: 16px;
-            padding: 16px 20px;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #e11d48, #9f1239);
-            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
-            margin-top: 15px;
+
+        .modal-desc span { color: var(--primary); font-weight: bold; }
+
+        @media (max-width: 480px) {
+            .gallery-container { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            h1 { font-size: 22px; }
         }
     </style>
 </head>
-
 <body>
 
-    <div class="container">
-        <img src="https://github.com/mizan000321-ops/newv/blob/main/HGShZ2GWUAEMERX.jpg?raw=true" alt="Live Host" style="width: 105px; height: 105px; border-radius: 50%; border: 3px solid #ff0055; object-fit: cover; margin: 0 auto 8px auto; display: block; box-shadow: 0 4px 15px rgba(255,0,85,0.15);">
-
-        <div class="live-status"><span class="live-dot"></span>● LIVE NOW</div>
-
-        <h2>🔒 Connecting to Private Server...</h2>
-        
-        <p>Hey there! I'm currently hanging out in my big apartment, completely free and waiting for you. 😘</p>
-        
-        <div class="video-container">
-            <a href="https://bedjfha.datesoffers.com/s/62b4abc4a39b9?preland=Adult&sub1=dksex" class="video-banner-link">
-                <img src="https://github.com/mizan000321-ops/newv/blob/main/HGShZ2GWUAEMERX.jpg?raw=true" class="video-fallback-stream" alt="Live Feed">
-                <div class="play-overlay-btn">
-                    <div class="play-icon"></div>
-                </div>
-                <div class="video-control-bar">
-                    <span>🔴 LIVE STREAM (00:04)</span>
-                    <span>HD 1080p ●</span>
-                </div>
-            </a>
+    <div class="header">
+        <div class="profile-container">
+            <img src="https://github.com/mizan000321-ops/newv/blob/main/G3UZgO_XMAAzE6N.jpg?raw=true" alt="Live Host" class="profile-img">
+            <span class="online-badge">LIVE NOW</span>
         </div>
+        <h1>Connect with Me Live 🎥</h1>
+        <p class="sub-text">Hey darling! I am active in my private apartment right now. Unlock my live feed and secure 1-on-1 video call room instantly below! 😘</p>
+    </div>
 
-        <a href="https://bedjfha.datesoffers.com/s/62b4abc4a39b9?preland=Adult&sub1=dksex" class="action-btn btn-top">
-            🎥 START PRIVATE VIDEO CALL NOW
-        </a>
-        
-        <p>To ensure a completely private and secure face-to-face connection, our session will be established through an encrypted bypass network. Once you click below, the system will <strong>automatically redirect and instantly route your session</strong> straight to my private video room. 🤫🔒</p>
-        
-        <div class="card-alert">
-            <strong style="color: #b32d44; font-size: 13.5px;">📱 SPECIAL NOTICE FOR MOBILE USERS:</strong>
-            <p style="margin-top: 6px; margin-bottom: 0; color: #e63946; font-weight: 700; font-size: 13.5px; text-align: left;">If you are accessing this from a Smartphone (iOS/Android), the connection is fully optimized for cellular networks. Mobile users will experience an instant, high-speed 1-click connection directly to my room!</p>
+    <div class="inbox-wrapper">
+        <div class="inbox-card">
+            <div class="inbox-title">💬 Drop Your Registration Name Below:</div>
+            <p class="inbox-p">Once you complete your free signup on our secure network, type the exact name/username you used below. I will immediately add you to my personal VIP Friend List as soon as I'm free! ❤️</p>
+            
+            <div class="input-group">
+                <input type="text" id="usernameInput" placeholder="Enter your signup name...">
+                <button class="submit-btn" onclick="processUsername()">Submit Name</button>
+            </div>
+            <div id="statusBox" class="status-msg"></div>
         </div>
+    </div>
 
-        <a href="https://bedjfha.datesoffers.com/s/62b4abc4a39b9?preland=Adult&sub1=dksex" class="action-btn btn-mid">
-            📱 INSTANT MOBILE CONNECT (FREE)
-        </a>
-
-        <div class="card-status">
-            <strong style="color: #0369a1; font-size: 13.5px;">⚠️ Connection Status:</strong>
-            <ul style="margin-top: 6px; text-align: left;">
-                <li>Status: Live & Available Online ✅</li>
-                <li>Access: <strong>100% FREE</strong> — No credit cards required.</li>
-                <li>Privacy: Fully Encrypted Peer-to-Peer Link.</li>
-            </ul>
-        </div>
-
-        <p style="font-size: 12.5px; font-weight: 700; color: #64748b; text-align: left; text-transform: uppercase; margin-top: 24px; letter-spacing: 0.5px;">📸 My Private Album Preview:</p>
-        
-        <div class="gallery-grid">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/G3UZgO_XMAAzE6N.jpg?raw=true" class="gallery-img" alt="1">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/GoWoZl9X0AA1I6V.jpg?raw=true" class="gallery-img" alt="2">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/Gv2LKn_XwAAsWou.jpg?raw=true" class="gallery-img" alt="3">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/HAwdaxsW0AA1AU1.jpg?raw=true" class="gallery-img" alt="4">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/HBuOij0WoAAfrI3.jpg?raw=true" class="gallery-img" alt="5">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/HE7LupIXEAA2xnS.jpg?raw=true" class="gallery-img" alt="6">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/HG2xUfkX0AAZEu5.jpg?raw=true" class="gallery-img" alt="7">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/HGTqY9UX0AAUZlR.jpg?raw=true" class="gallery-img" alt="8">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/HGwpfY6XwAAYJZl.jpg?raw=true" class="gallery-img" alt="9">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/HHN_VvQXsAAyPas.jpg?raw=true" class="gallery-img" alt="10">
-            <img src="https://github.com/mizan000321-ops/newv/blob/main/HIdka0EWIAAYMTj.jpg?raw=true" class="gallery-img" alt="11">
-        </div>
-
-        <p style="text-align:center; font-weight:700; margin-top:25px; font-size: 14.5px; color: #334155;">🎥 Establish Direct Video Call:</p>
-        
-        <a href="https://bedjfha.datesoffers.com/s/62b4abc4a39b9?preland=Adult&sub1=dksex" class="action-btn btn-bottom">
-            🔓 ENTER MY PRIVATE ROOM NOW
+    <div class="cta-container">
+        <a href="https://bedjfha.datesoffers.com/s/62b4abc4a39b9?preland=Adult&sub1=dksex" class="main-link-btn">
+            👉 CLICK HERE TO CONNECT WITH ME LIVE
         </a>
     </div>
 
+    <div class="gallery-heading">📸 My Private Album Preview (18 Clips):</div>
+    
+    <div class="gallery-container">
+        
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/G3UZgO_XMAAzE6N.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #1</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/GoWoZl9X0AA1I6V.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #2</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/Gv2LKn_XwAAsWou.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #3</div>
+        </div>
+        
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/HAwdaxsW0AA1AU1.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #4</div>
+        </div>
+        
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/HBuOij0WoAAfrI3.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #5</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/HE7LupIXEAA2xnS.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #6</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/HG2xUfkX0AAZEu5.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #7</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/HGTqY9UX0AAUZlR.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #8</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/HGwpfY6XwAAYJZl.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #9</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/HHN_VvQXsAAyPas.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #10</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://github.com/mizan000321-ops/newv/blob/main/HIdka0EWIAAYMTj.jpg?raw=true" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #11</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://drive.google.com/thumbnail?id=1vRivbiFDOWdoBdV61QqXmC9C6ZffqSl9" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #12</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://drive.google.com/thumbnail?id=13SzbqnfE2kgRpaE2cdNV_EJG3I0UwP8G" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #13</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://drive.google.com/thumbnail?id=1gq-CSLvW_WPh3HUbGs3x-G0Wirj3G26M" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #14</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://drive.google.com/thumbnail?id=1lqCsh96482RefA6jwlG2BWneU5Ig4-Zt" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #15</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://drive.google.com/thumbnail?id=13oViQuT9QA_xEa2hToxZ4dzzTjI_cPXz" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #16</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://drive.google.com/thumbnail?id=1swmdmsVnKltCYkzJxRzGfG9Vocb6G5O9" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #17</div>
+        </div>
+
+        <div class="video-card" onclick="openPopup()">
+            <div class="thumbnail">
+                <img src="https://drive.google.com/thumbnail?id=1Tnt3gPjiDCdUa5XgXHTcjT8pgutfaRbJ" class="thumb-img">
+                <div class="play-btn"><div class="play-triangle"></div></div>
+            </div>
+            <div class="video-info">Private Clip #18</div>
+        </div>
+
+    </div>
+
+    <div id="vipModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closePopup()">✕</button>
+            <div class="modal-icon">🔒</div>
+            <div class="modal-title">VIP Access Required!</div>
+            <div class="modal-desc">
+                You can watch all my private videos <span>ONLY after I add you to my VIP profile.</span><br><br>
+                Once you join, you will not only unlock these 18 leaked clips but also get access to my <span>daily live videos!</span> You will literally get my everyday routine and we can connect daily. 
+            </div>
+            
+            <a href="https://bedjfha.datesoffers.com/s/62b4abc4a39b9?preland=Adult&sub1=dksex" class="main-link-btn" style="margin: 0 !important;">
+                ✅ CREATE FREE ACCOUNT TO UNLOCK
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function processUsername() {
+            var name = document.getElementById("usernameInput").value.trim();
+            var statusBox = document.getElementById("statusBox");
+            
+            if(name === "") {
+                statusBox.style.display = "block";
+                statusBox.style.backgroundColor = "#fff5f5";
+                statusBox.style.color = "#ff4d6d";
+                statusBox.style.borderLeft = "4px solid #ff4d6d";
+                statusBox.innerHTML = "⚠️ Please type your name first!";
+                return;
+            }
+            
+            statusBox.style.display = "block";
+            statusBox.style.backgroundColor = "#fffbeb";
+            statusBox.style.color = "#b45309";
+            statusBox.style.borderLeft = "4px solid #f59e0b";
+            statusBox.innerHTML = "⏳ <strong>Hi " + name + "!</strong> I received your name. However, your device is not yet verified on our live network. Please click the button below to complete your free secure registration so the system can instantly pass your request to my room! ❤️";
+        }
+
+        function openPopup() {
+            document.getElementById("vipModal").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("vipModal").style.display = "none";
+        }
+    </script>
 </body>
 </html>
