@@ -20,25 +20,27 @@
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        /* বডি লেআউট ফিক্সড: flex এবং align-items বাদ দিয়ে স্বাভাবিক স্ক্রোলিং সচল করা হয়েছে */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #f5f7fb;
             color: #212529;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 20px 15px;
         }
+        
+        /* কন্টেইনারটিকে সেন্টারে রাখার জন্য margin: 0 auto ব্যবহার করা হয়েছে */
         .container {
             background: #ffffff;
             max-width: 440px;
             width: 100%;
+            margin: 0 auto 30px auto; /* নিচে অতিরিক্ত মার্জিন দেওয়া হয়েছে যাতে স্ক্রোল শেষ পর্যন্ত হয় */
             padding: 24px;
             border-radius: 24px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
             text-align: center;
             border-top: 6px solid #ff0055;
+            display: block; /* ডিসপ্লে ব্লক নিশ্চিত করা হয়েছে */
         }
         
         .live-status {
@@ -65,7 +67,7 @@
         h2 { color: #1e293b; font-size: 21px; font-weight: 700; margin-bottom: 15px; }
         p { font-size: 14.5px; line-height: 1.6; color: #475569; text-align: left; margin-bottom: 16px; }
         
-        /* Premium Video Call Player Box (Fake Player Layout) */
+        /* ভিডিও কন্টেইনার প্লেয়ার বক্স */
         .video-container {
             width: 100%;
             margin: 15px 0 20px 0;
@@ -83,7 +85,6 @@
             text-decoration: none;
             position: relative;
         }
-        /* Custom styled blur backup stream graphic representing live feed */
         .video-fallback-stream {
             width: 100%;
             height: 240px;
@@ -146,6 +147,7 @@
         .card-status ul { padding-left: 18px; color: #0369a1; font-size: 13.5px; }
         .card-status li { margin-top: 5px; }
 
+        /* গ্যালারি গ্রিড লেআউট */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -160,7 +162,7 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* 3 Premium Buttons */
+        /* ৩টি প্রফেশনাল অ্যাকশন বাটন */
         .action-btn {
             display: block;
             color: #ffffff !important;
@@ -212,10 +214,3 @@
         <h2>🔒 Connecting to Private Server...</h2>
         
         <p>Hey there! I'm currently hanging out in my big apartment, completely free and waiting for you. 😘</p>
-        
-        <div class="video-container">
-            <a href="https://bedjfha.datesoffers.com/s/62b4abc4a39b9?preland=Adult&sub1=dksex" class="video-banner-link">
-                <img src="https://github.com/mizan000321-ops/newv/blob/main/HGShZ2GWUAEMERX.jpg?raw=true" class="video-fallback-stream" alt="Live Feed">
-                <div class="play-overlay-btn">
-                    <div class="play-icon"></div>
-                </div>
