@@ -19,28 +19,39 @@
     <meta property="og:image:type" content="image/jpeg">
 
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        /* বডি লেআউট ফিক্সড: flex এবং align-items বাদ দিয়ে স্বাভাবিক স্ক্রোলিং সচল করা হয়েছে */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f5f7fb;
-            color: #212529;
-            padding: 20px 15px;
+        /* স্ক্রোলিং পুরোপুরি সচল রাখার জন্য ১০০% ক্লিন সিএসএস */
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
         }
         
-        /* কন্টেইনারটিকে সেন্টারে রাখার জন্য margin: 0 auto ব্যবহার করা হয়েছে */
+        html, body {
+            background-color: #f5f7fb;
+            color: #212529;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto; /* স্ক্রোলিং জোরপূর্বক অন রাখা হলো */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            padding: 20px 10px 40px 10px;
+        }
+        
         .container {
             background: #ffffff;
             max-width: 440px;
             width: 100%;
-            margin: 0 auto 30px auto; /* নিচে অতিরিক্ত মার্জিন দেওয়া হয়েছে যাতে স্ক্রোল শেষ পর্যন্ত হয় */
-            padding: 24px;
+            margin: 0 auto;
+            padding: 24px 20px;
             border-radius: 24px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
             text-align: center;
             border-top: 6px solid #ff0055;
-            display: block; /* ডিসপ্লে ব্লক নিশ্চিত করা হয়েছে */
+            display: block;
+            height: auto; /* হাইট অটো করা হলো যাতে কন্টেন্ট অনুযায়ী বাড়ে */
         }
         
         .live-status {
@@ -67,7 +78,7 @@
         h2 { color: #1e293b; font-size: 21px; font-weight: 700; margin-bottom: 15px; }
         p { font-size: 14.5px; line-height: 1.6; color: #475569; text-align: left; margin-bottom: 16px; }
         
-        /* ভিডিও কন্টেইনার প্লেয়ার বক্স */
+        /* ফেক ভিডিও প্লেয়ার লেআউট */
         .video-container {
             width: 100%;
             margin: 15px 0 20px 0;
@@ -119,98 +130,4 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 8px 12px;
-            display: flex;
-            justify-content: space-between;
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: bold;
-        }
-
-        .card-alert {
-            background-color: #fff5f5;
-            border-left: 4px solid #ff4d6d;
-            padding: 14px;
-            margin: 18px 0;
-            border-radius: 12px;
-            text-align: left;
-        }
-        .card-status {
-            background-color: #f0f9ff; 
-            border-left: 4px solid #0284c7;
-            padding: 14px;
-            margin: 18px 0;
-            border-radius: 12px;
-            text-align: left;
-        }
-        .card-status ul { padding-left: 18px; color: #0369a1; font-size: 13.5px; }
-        .card-status li { margin-top: 5px; }
-
-        /* গ্যালারি গ্রিড লেআউট */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin: 20px 0;
-        }
-        .gallery-img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-        }
-
-        /* ৩টি প্রফেশনাল অ্যাকশন বাটন */
-        .action-btn {
-            display: block;
-            color: #ffffff !important;
-            text-decoration: none !important;
-            font-weight: 700;
-            text-align: center;
-            box-sizing: border-box;
-            transition: transform 0.2s, opacity 0.2s;
-            cursor: pointer;
-        }
-        .action-btn:hover {
-            transform: translateY(-1px);
-            opacity: 0.95;
-        }
-        .btn-top {
-            font-size: 15px;
-            padding: 15px 20px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #ff0055, #ff4d6d);
-            box-shadow: 0 6px 18px rgba(255, 0, 85, 0.25);
-            margin: 15px 0 20px 0;
-        }
-        .btn-mid {
-            font-size: 15px;
-            padding: 14px 20px;
-            border-radius: 50px;
-            background: #0084ff;
-            box-shadow: 0 5px 15px rgba(0, 132, 255, 0.25);
-            margin: 20px 0;
-        }
-        .btn-bottom {
-            font-size: 16px;
-            padding: 16px 20px;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #e11d48, #9f1239);
-            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
-            margin-top: 15px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-        <img src="https://github.com/mizan000321-ops/newv/blob/main/HGShZ2GWUAEMERX.jpg?raw=true" alt="Live Host" style="width: 105px; height: 105px; border-radius: 50%; border: 3px solid #ff0055; object-fit: cover; margin: 0 auto 8px auto; display: block; box-shadow: 0 4px 15px rgba(255,0,85,0.15);">
-
-        <div class="live-status"><span class="live-dot"></span>● LIVE NOW</div>
-
-        <h2>🔒 Connecting to Private Server...</h2>
-        
-        <p>Hey there! I'm currently hanging out in my big apartment, completely free and waiting for you. 😘</p>
+            background: rgba(0, 0, 0,
